@@ -6,7 +6,7 @@ namespace OracleTest
 {
     class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             OracleConnection conn = null;
             try
@@ -38,7 +38,7 @@ namespace OracleTest
         }
 
 
-        static OracleConnection OpenConn()
+        private static OracleConnection OpenConn()
         {
             OracleConnection conn = new OracleConnection();
             conn.ConnectionString = "Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.220.16.33)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=keith)));Persist Security Info=True;User ID=keith;Password=keith;";
@@ -46,7 +46,7 @@ namespace OracleTest
             return conn;
         }
 
-        static void CloseConn(OracleConnection conn)
+        private static void CloseConn(OracleConnection conn)
         {
             if (conn == null) { return; }
             try
